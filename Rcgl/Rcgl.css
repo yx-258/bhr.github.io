@@ -1,0 +1,256 @@
+/* 人才管理模块基础样式 */
+:root {
+    --primary-color: #007bff;
+    --secondary-bg-color: #F8F8F8;
+    --background-white: #FFFFFF;
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --border-light: #EEEEEE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background-white);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background: var(--secondary-bg-color);
+    padding: 2.5rem 0;
+    border-right: 1px solid var(--border-light);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+}
+
+.logo h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0 1.5rem;
+}
+
+.nav-item {
+    margin-bottom: 0.8rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 1.2rem 1.8rem;
+    text-decoration: none;
+    color: var(--text-medium);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: #E0E0E0;
+    color: var(--text-dark);
+}
+
+.nav-link.current-page {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.nav-link.current-page:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 3rem;
+    background: var(--background-white);
+}
+
+.main-content h1 {
+    color: var(--text-dark);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* 页面头部 */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-light);
+    background: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    color: var(--text-dark);
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.header p {
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    .header p {
+        font-size: 1rem;
+    }
+}
+/* 欢迎内容样式 */
+.welcome-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.welcome-card {
+    background: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 25% 25%, transparent 40%, rgba(0, 123, 255, 0.03) 60%),
+        radial-gradient(circle at 75% 75%, transparent 40%, rgba(0, 123, 255, 0.03) 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.welcome-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-card h3 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.feature-list li {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, transparent 60%, rgba(0, 123, 255, 0.05) 80%),
+        radial-gradient(circle at 80% 50%, transparent 60%, rgba(0, 123, 255, 0.05) 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.feature-list li:hover::before {
+    opacity: 1;
+}
+
+.feature-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.feature-list li:last-child {
+    margin-bottom: 0;
+}
+
+.feature-list strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .welcome-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .welcome-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-list li {
+        padding: 1rem;
+    }
+} 

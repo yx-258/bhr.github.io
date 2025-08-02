@@ -1,0 +1,141 @@
+/* 认证成绩页面样式 */
+
+/* 页面标题样式 */
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    color: #2c5aa0;
+    margin-bottom: 10px;
+}
+
+/* 对比容器 */
+.comparison-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* 对比卡片 */
+.comparison-card {
+    background: white;
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 卡片头部 */
+.card-header {
+    background: white;
+    color: #4a90e2;
+    padding: 25px 30px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid #4a90e2;
+}
+
+/* 卡片内容 */
+.card-content {
+    padding: 35px;
+}
+
+/* 内容区块 */
+.content-section {
+    margin-bottom: 35px;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+/* 区块标题 */
+.section-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* 区块内容 */
+.section-content {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.3rem;
+}
+
+/* 列表样式 */
+.content-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.content-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+    font-size: 1.2rem;
+}
+
+.content-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: #4a90e2;
+    border-radius: 50%;
+}
+
+/* 红色强调文字 */
+.highlight-red {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+/* 示例列表 */
+.example-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.example-list li {
+    padding-left: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .comparison-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 20px 10px;
+    }
+    
+    .card-header {
+        padding: 20px 25px;
+        font-size: 1.8rem;
+    }
+    
+    .card-content {
+        padding: 30px;
+    }
+    
+    .section-content {
+        font-size: 1.2rem;
+    }
+} 

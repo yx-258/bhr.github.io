@@ -1,0 +1,335 @@
+ /* 条件要求部分样式 */
+ .section-title {
+     color: #2c3e50;
+     font-size: 1.8em;
+     margin-bottom: 20px;
+     border-left: 5px solid #3498db;
+     padding-left: 10px;
+ }
+
+ .remark-text {
+     font-size: 0.9em;
+     color: #8d887f;
+     margin-bottom: 25px;
+     text-align: right;
+ }
+
+ .requirements-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 25px;
+     margin-bottom: 40px;
+ }
+
+ .req-box {
+     background-color: #f9f9f9;
+     border: 1px solid #e0e0e0;
+     border-radius: 8px;
+     padding: 20px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+     display: flex;
+     flex-direction: column;
+ }
+
+ .box-header {
+     background-color: #3498db;
+     /* 蓝色背景，可根据图片调整 */
+     color: white;
+     padding: 10px 15px;
+     border-radius: 5px;
+     font-weight: bold;
+     font-size: 1.1em;
+     margin-bottom: 15px;
+     text-align: center;
+ }
+
+ .req-box ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     flex-grow: 1;
+ }
+
+ .req-box ul li {
+     margin-bottom: 10px;
+     line-height: 1.6;
+     color: #555;
+ }
+
+ .percentage-display {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 10px 0 20px;
+ }
+
+ .percentage-value {
+     font-size: 2.2em;
+     font-weight: bold;
+     color: #e67e22;
+     /* 橙色，与图片中的百分比颜色相近 */
+     background-color: #fffaf0;
+     /* 淡橙色背景 */
+     border: 3px solid #f39c12;
+     /* 橙色边框 */
+     border-radius: 50%;
+     width: 80px;
+     height: 80px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 0 10px rgba(243, 156, 18, 0.2);
+ }
+
+ /* 备注部分样式 */
+ .remark-title {
+     margin-top: 50px;
+     color: #2c3e50;
+ }
+
+ .remark-list {
+     list-style: decimal;
+     /* 使用数字列表 */
+     padding-left: 25px;
+     color: #555;
+     line-height: 1.8;
+ }
+
+ .remark-list li {
+     margin-bottom: 10px;
+ }
+
+ /* 大带宽职级评定流程样式 */
+ .flow-chart-title {
+     margin-top: 60px;
+     /* 流程图标题上方的间距 */
+     margin-bottom: 40px;
+     text-align: center;
+     border-left: none;
+     padding-left: 0;
+ }
+
+ .flow-chart-container {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 40px 0 40px 0;
+     background: linear-gradient(120deg, #f0f4ff 0%, #e9ecef 100%);
+     border-radius: 24px;
+     box-shadow: 0 8px 32px rgba(0, 82, 212, 0.08), 0 1.5px 8px rgba(0, 0, 0, 0.04);
+     overflow: visible;
+     min-width: 350px;
+ }
+
+ .flow-timeline {
+     position: absolute;
+     left: 50%;
+     top: 60px;
+     bottom: 60px;
+     width: 6px;
+     background: linear-gradient(180deg, #b3c6e0 0%, #e0e7ef 100%);
+     border-radius: 3px;
+     z-index: 0;
+     transform: translateX(-50%);
+ }
+
+ .flow-step {
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     align-items: flex-start;
+     width: 80%;
+     min-width: 340px;
+     margin-bottom: 60px;
+     z-index: 2;
+     background: none;
+     box-shadow: none;
+     border-radius: 0;
+     justify-content: flex-start;
+ }
+
+ .flow-step:last-child {
+     margin-bottom: 0;
+ }
+
+ .flow-node {
+     position: relative;
+     min-width: 60px;
+     min-height: 60px;
+     width: 60px;
+     height: 60px;
+     background: linear-gradient(135deg, var(--primary-color) 70%, #0056b3 100%);
+     border-radius: 50%;
+     box-shadow: 0 4px 18px rgba(0, 82, 212, 0.18);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #fff;
+     font-size: 1.7rem;
+     font-weight: 700;
+     border: 3px solid #fff;
+     z-index: 3;
+     transition: transform 0.2s;
+ }
+
+ .flow-step:hover .flow-node {
+     transform: scale(1.08);
+     box-shadow: 0 8px 32px rgba(0, 82, 212, 0.22);
+ }
+
+ .flow-content-card {
+     background: linear-gradient(45deg, #e3f2fd 0%, #bbdefb 50%, #e3f2fd 100%); /* 交叉蓝色渐变 */
+     border-radius: 18px;
+     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+     padding: 28px 36px;
+     margin-left: 40px;
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     min-width: 220px;
+     position: relative;
+     border-left: 6px solid var(--primary-color);
+     transition: box-shadow 0.2s;
+ }
+
+ .flow-step:hover .flow-content-card {
+     box-shadow: 0 8px 32px rgba(0, 82, 212, 0.13);
+ }
+
+ .flow-box {
+     background: none;
+     color: var(--primary-color);
+     font-size: 1.18em;
+     font-weight: 700;
+     margin-bottom: 10px;
+     padding: 0;
+     border: none;
+     box-shadow: none;
+     border-radius: 0;
+ }
+
+ .flow-number {
+     background: #fff;
+     color: var(--primary-color);
+     border-radius: 50%;
+     width: 32px;
+     height: 32px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1.1em;
+     font-weight: bold;
+     box-shadow: 0 2px 8px rgba(0, 82, 212, 0.10);
+     margin-right: 10px;
+     border: 2px solid var(--primary-color);
+ }
+
+ .flow-sub-steps {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-top: 12px;
+     margin-left: 0;
+     align-items: flex-start;
+ }
+
+ .sub-step-box {
+     background: linear-gradient(90deg, #e9f7ff 60%, #f0f4ff 100%);
+     border: 1.5px solid #a8d5ff;
+     color: #337ab7;
+     padding: 10px 18px;
+     border-radius: 8px;
+     font-size: 1em;
+     min-width: 140px;
+     text-align: left;
+     box-shadow: 0 2px 8px rgba(51, 122, 183, 0.08);
+     font-weight: 500;
+     margin-left: 0;
+     position: relative;
+ }
+
+ .sub-flow-number {
+     font-weight: bold;
+     margin-right: 8px;
+     font-size: 1.0em;
+     color: var(--primary-color);
+ }
+
+ .flow-data-link {
+     background-color: #f0f0f0;
+     /* 灰色背景 */
+     color: #666;
+     padding: 10px 18px;
+     /* 增大内边距 */
+     border: 1px solid #ddd;
+     border-radius: 5px;
+     font-size: 1em;
+     /* 增大字号 */
+     margin-left: 30px;
+     /* 与流程框的间距 */
+     flex-shrink: 0;
+     align-self: center;
+     /* 使其在垂直方向上居中 */
+     white-space: nowrap;
+     /* 防止文字换行 */
+ }
+
+ /* 响应式调整 */
+ @media (max-width: 900px) {
+     .flow-chart-container {
+         padding: 20px 0 20px 0;
+     }
+
+     .flow-step {
+         width: 98%;
+         min-width: 0;
+     }
+
+     .flow-content-card {
+         padding: 18px 10px;
+         margin-left: 20px;
+     }
+ }
+
+ @media (max-width: 600px) {
+     .flow-chart-container {
+         padding: 10px 0 10px 0;
+         border-radius: 10px;
+     }
+
+     .flow-step {
+         flex-direction: column;
+         align-items: center;
+         margin-bottom: 40px;
+     }
+
+     .flow-node {
+         margin-bottom: 10px;
+     }
+
+     .flow-content-card {
+         margin-left: 0;
+         border-left: none;
+         border-top: 6px solid var(--primary-color);
+         border-radius: 12px;
+         min-width: 0;
+         width: 98%;
+     }
+
+     .flow-sub-steps {
+         width: 100%;
+         align-items: center;
+     }
+ }
+
+ .tow {
+     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+     border-radius: 15px;
+     padding: 2rem 0;
+     display: inline-block;
+     width: 100%;
+     text-align: center;
+     margin-bottom: 1.5rem;
+ }

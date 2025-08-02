@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业人事管理平台</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dn.css">
+    <link rel="stylesheet" href="page-transitions.css">
+    <style>
+        /* 主页淡入动画 */
+        body {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        body.page-loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link rel="preconnect" href="https://cdn.staticfile.org" crossorigin>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">人事生命周期管理平台</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">首页</a></li>
+                    <li><a href="#process">工作流程</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 登录界面 -->
+    <section class="login-section" id="loginSection">
+        <div class="login-content">
+            <h1>欢迎使用</h1>
+            <p>人事生命周期管理平台<br>为您提供全方位的人事管理解决方案</p>
+            <button class="login-button" onclick="login()">立即登录</button>
+        </div>
+    </section>
+
+    <!-- 主页面内容 -->
+    <div class="main-content" id="mainContent">
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>人事生命周期管理平台</h1>
+                    <p></p>
+                    <a href="#features" class="cta-button">了解更多</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2 class="section-title">六大核心模块，覆盖人事管理全流程</h2>
+                <div class="features-grid">
+                    <a href="Zwgl/Zwgl.html" class="feature-link">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <object data="SVG/bg1.svg" type="image/svg+xml" width="48" height="48"
+                                    aria-label="职位管理"></object>
+                            </div>
+                            <h3>职位管理</h3>
+                        </div>
+                    </a>
+                    <a href="Pxgl/Pxgl.html" class="feature-link">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <object data="SVG/bg2.svg" type="image/svg+xml" width="48" height="48"
+                                    aria-label="培训管理"></object>
+                            </div>
+                            <h3>培训管理</h3>
+                        </div>
+                    </a>
+                    <a href="Zjgl/Zjgl.html" class="feature-link">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <object data="SVG/bg3.svg" type="image/svg+xml" width="48" height="48"
+                                    aria-label="职级管理"></object>
+                            </div>
+                            <h3>职级管理</h3>
+                        </div>
+                    </a>
+                    <a href="Rzgl/Rzgl.html" class="feature-link">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <object data="SVG/bg4.svg" type="image/svg+xml" width="48" height="48"
+                                    aria-label="认证管理"></object>
+                            </div>
+                            <h3>认证管理</h3>
+                        </div>
+                    </a>
+                    <a href="Jxgl/Jxgl.html" class="feature-link">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <object data="SVG/bg5.svg" type="image/svg+xml" width="48" height="48"
+                                    aria-label="绩效管理"></object>
+                            </div>
+                            <h3>绩效管理</h3>
+                        </div>
+                    </a>
+                    <a href="Rcgl/Rcgl.html" class="feature-link">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <object data="SVG/bg6.svg" type="image/svg+xml" width="48" height="48"
+                                    aria-label="人才管理"></object>
+                            </div>
+                            <h3>人才管理</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="process-section"> </section>
+        <footer id="contact" class="main-footer"> 这里可以添加联系方式 </footer>
+    </div>
+
+    <script src="page-transitions.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

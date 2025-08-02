@@ -1,0 +1,134 @@
+/* 认证管理模块基础样式 */
+:root {
+    --primary-color: #007bff;
+    --secondary-bg-color: #F8F8F8;
+    --background-white: #FFFFFF;
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --border-light: #EEEEEE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background-white);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background: var(--secondary-bg-color);
+    padding: 2.5rem 0;
+    border-right: 1px solid var(--border-light);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+}
+
+.logo h2 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0 1.5rem;
+}
+
+.nav-item {
+    margin-bottom: 0.8rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 1.2rem 1.8rem;
+    text-decoration: none;
+    color: var(--text-medium);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: #E0E0E0;
+    color: var(--text-dark);
+}
+
+.main-content {
+    flex: 1;
+    padding: 3rem;
+    background: var(--background-white);
+}
+
+.main-content h1 {
+    color: var(--text-dark);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* 页面头部 */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-light);
+    background: #fff;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    color: var(--text-dark);
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.header p {
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    .header p {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .header p {
+        font-size: 0.9rem;
+    }
+} 

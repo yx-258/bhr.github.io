@@ -1,0 +1,627 @@
+/* --- 全局与基础设置 --- */
+:root {
+    --primary-color: #0052D4;
+    /* 主题蓝 */
+    --secondary-color: #F0F4F8;
+    /* 浅灰背景 */
+    --dark-color: #121E2D;
+    /* 深色文字 */
+    --light-color: #FFFFFF;
+    /* 白色 */
+    --gray-color: #6A737D;
+    /* 灰色文字 */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* 平滑滚动效果 */
+}
+
+body {
+    /* 使用本地系统中文字体优先，提高在国内无 GoogleFonts 情况下的显示效果 */
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    line-height: 1.7;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    /* 性能优化：启用硬件加速 */
+    transform: translateZ(0);
+    will-change: auto;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+p {
+    margin: 10px 0;
+    color: var(--gray-color);
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+/* --- 顶部导航栏 --- */
+.main-header {
+    background: var(--light-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background 0.3s ease;
+    /* 性能优化：启用硬件加速 */
+    transform: translateZ(0);
+    /* 确保内容能够完全填充宽度 */
+    box-sizing: border-box;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+.main-header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+.main-header nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+.main-header nav ul li {
+    margin-left: 25px;
+}
+
+.main-header nav a {
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-header nav a:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- 主视觉区 (Hero Section) --- */
+.hero-section {
+    padding-top: 80px;
+    /* 留出导航栏高度 */
+    height: 100vh;
+    /* 占满整个视口高度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-color);
+    /* 让内部文字默认为白色 */
+    position: relative;
+    overflow: hidden;
+    /* 性能优化：启用硬件加速 */
+    transform: translateZ(0);
+
+    /* === 背景图设置 === */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('pexels-goumbik-590016.jpg');
+    background-size: cover;
+    /* 关键：让背景图覆盖整个区域 */
+    background-position: center center;
+    /* 关键：让背景图居中显示 */
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* 确保内容在背景之上 */
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    /* 放大标题 */
+    font-weight: 700;
+    color: var(--light-color);
+    /* 强制设为白色 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* 给文字加一点阴影，更清晰 */
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    color: var(--light-color);
+    /* 强制设为白色 */
+    max-width: 600px;
+    /* 避免段落在宽屏上过长 */
+    margin: 20px auto 30px auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 82, 212, 0.4);
+    transition: all 0.3s ease;
+    /* 性能优化：启用硬件加速 */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) translateZ(0);
+    background: transparent;
+    /* 悬停时变透明 */
+    border-color: var(--light-color);
+    /* 边框变白 */
+    color: var(--light-color);
+    box-shadow: 0 6px 20px rgba(0, 82, 212, 0.5);
+}
+
+
+/* --- 核心功能区 (Features Section) --- */
+.features-section {
+    padding: 100px 0;
+    background: var(--light-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 确保内容层级正确 */
+.features-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 创意模块样式 - 简洁版本 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.feature-card {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 16px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    background: var(--light-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    border: 1px solid rgba(0, 82, 212, 0.1);
+}
+
+/* 瀑布流布局 - 错落有致 */
+.feature-card:nth-child(odd) {
+    margin-top: 15px;
+}
+.feature-card:nth-child(even) {
+    margin-bottom: 15px;
+}
+
+/* 链接样式 */
+.feature-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* 悬停效果 - 磁性吸引 */
+.feature-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 82, 212, 0.15);
+    border-color: rgba(0, 82, 212, 0.3);
+}
+
+/* 图标容器 - 增大尺寸让SVG更好填充 */
+.feature-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
+    position: relative;
+    pointer-events: auto; /* 确保容器可以接收鼠标事件 */
+}
+
+/* 图标呼吸灯效果 - 很淡的蓝色 */
+.feature-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0, 82, 212, 0.08) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: pulse 3s infinite;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* 图标样式 - 自适应填充 */
+.feature-icon img,
+.feature-icon object {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    pointer-events: none; /* 让鼠标事件穿透到父元素 */
+}
+
+/* 悬停时图标轻微放大 */
+.feature-card:hover .feature-icon img,
+.feature-card:hover .feature-icon object {
+    transform: scale(1.1);
+}
+
+/* 标题样式 */
+.feature-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+    position: relative;
+    z-index: 2;
+}
+
+/* 动画定义 */
+@keyframes pulse {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1); 
+        opacity: 0.3; 
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.2); 
+        opacity: 0.6; 
+    }
+}
+
+/* 响应式设计 */
+@media(min-width: 1400px) {
+    .features-grid {
+        max-width: 1600px;
+        gap: 80px;
+    }
+}
+
+@media(max-width: 1399px) and (min-width: 1200px) {
+    .features-grid {
+        max-width: 1200px;
+        gap: 50px;
+    }
+}
+
+@media(max-width: 1199px) and (min-width: 992px) {
+    .features-grid {
+        max-width: 1000px;
+        gap: 40px;
+    }
+}
+
+@media(max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 800px;
+    }
+}
+
+@media(max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 500px;
+    }
+    
+    .feature-card {
+        height: 280px;
+        margin: 0 !important;
+    }
+}
+
+@media(max-width: 480px) {
+    .features-grid {
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+
+/* --- 工作流程区 (Process Section) --- */
+/* (这部分保留了之前的图片占位符样式，您可以选择使用SVG或PNG) */
+.process-section {
+    padding: 100px 0;
+    background-color: var(--secondary-color);
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.step {
+    flex: 1;
+    max-width: 280px;
+}
+
+.step-image {
+    height: 170px;
+    /* 预留空间 */
+    margin-bottom: 20px;
+}
+
+.step h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step-arrow {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-top: 50px;
+    font-weight: 700;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.image-placeholder {
+    background-color: #e9eef3;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+}
+
+.image-placeholder.medium {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+}
+
+.image-placeholder p {
+    color: var(--primary-color);
+}
+
+/* --- 页脚 --- */
+.main-footer {
+    background: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.main-footer p {
+    color: #a0a0a0;
+}
+
+
+/* --- 登录界面样式 --- */
+.login-section {
+    padding-top: 80px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-color);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('pexels-goumbik-590016.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+.login-content {
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    width: 90%;
+}
+
+.login-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.login-content p {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.login-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 82, 212, 0.4);
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    will-change: transform;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    transform: translateY(-3px) translateZ(0);
+    background: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(0, 82, 212, 0.5);
+}
+
+/* 主页面样式 */
+.main-content {
+    display: none;
+}
+
+.main-content.show {
+    display: block;
+}
+
+/* 登录页面隐藏 */
+.login-section.hide {
+    display: none;
+}
+
+
+
+@media(max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .main-header .container {
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    .main-header .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .main-header nav {
+        display: none;
+        /* 在小屏幕上隐藏导航，未来可改为汉堡菜单 */
+    }
+
+    .main-header .logo {
+        margin-left: 0;
+        justify-self: flex-start;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
+
+.tow {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 2rem 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}

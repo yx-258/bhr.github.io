@@ -1,0 +1,162 @@
+/* 面包屑导航组件样式 */
+.breadcrumb-container {
+    position: fixed;
+    top: 20px;
+    left: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 8px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.breadcrumb-container:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.breadcrumb-item:hover {
+    color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.breadcrumb-item.active {
+    color: #007bff;
+    font-weight: 500;
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.breadcrumb-separator {
+    color: #ccc;
+    font-size: 12px;
+    margin: 0 2px;
+}
+
+.breadcrumb-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.breadcrumb-home {
+    background: #28a745;
+}
+
+.breadcrumb-module {
+    background: #007bff;
+}
+
+.breadcrumb-page {
+    background: #6c757d;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .breadcrumb-container {
+        left: 20px;
+        right: 20px;
+        top: 15px;
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+    
+    .breadcrumb-item {
+        font-size: 13px;
+        padding: 3px 6px;
+    }
+    
+    .breadcrumb-separator {
+        font-size: 11px;
+    }
+    
+    .breadcrumb-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-container {
+        left: 10px;
+        right: 10px;
+        top: 10px;
+        padding: 5px 10px;
+    }
+    
+    .breadcrumb-item {
+        font-size: 12px;
+        padding: 2px 4px;
+    }
+    
+    /* 在小屏幕上隐藏部分面包屑项，只显示当前页面 */
+    .breadcrumb-item:not(.active):not(:last-child) {
+        display: none;
+    }
+    
+    .breadcrumb-separator {
+        display: none;
+    }
+}
+
+/* 动画效果 */
+@keyframes breadcrumbFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.breadcrumb-container {
+    animation: breadcrumbFadeIn 0.3s ease-out;
+}
+
+/* 深色主题支持 */
+@media (prefers-color-scheme: dark) {
+    .breadcrumb-container {
+        background: rgba(30, 30, 30, 0.95);
+        border-color: rgba(0, 123, 255, 0.2);
+    }
+    
+    .breadcrumb-item {
+        color: #ccc;
+    }
+    
+    .breadcrumb-item:hover {
+        background: rgba(0, 123, 255, 0.2);
+    }
+    
+    .breadcrumb-item.active {
+        background: rgba(0, 123, 255, 0.2);
+    }
+} 

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职位竞聘流程</title>
+    <link rel="stylesheet" href="../dn.css">
+    <link rel="stylesheet" href="../breadcrumb.css">
+    <link rel="stylesheet" href="Zwgl.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .process-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .process-section {
+            flex: 1;
+            min-width: 400px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2c5aa0;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90e2, #7bb3f0);
+            border-radius: 2px;
+        }
+
+        .process-flow {
+            position: relative;
+        }
+
+        .process-flow::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #4a90e2, #a8c8ec);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a90e2, #6ba3f0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-right: 30px;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            line-height: 1.2;
+        }
+
+        .step-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.4);
+        }
+
+        .step-content {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #4a90e2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .step-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .step-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .process-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-section {
+                min-width: auto;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .step-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 0.75rem;
+                margin-right: 20px;
+            }
+
+            .step-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>职位管理</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="Zwgl-page1.html" class="nav-link">职位竞聘</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Zwgl-page2.html" class="nav-link">职位调整</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Zwgl-page3.html" class="nav-link">试岗考评</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <div class="header">
+                <h1>职位竞聘流程</h1>
+            </div>
+            <div class="process-container">
+                <!-- 竞聘流程 -->
+                <div class="process-section">
+                    <h2 class="section-title">竞聘流程</h2>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-icon">确定<br>职位指数</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>需求单位梳理本单位职位职级数，确定空缺职位</li>
+                                    <li>提前与人力资源部职位管理员沟通</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">发起<br>公司<br>呈批件</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>需竞聘的职位职数</li>
+                                    <li>竞聘职位任职资格条件绩效无强制要求，依据需求单位意见</li>
+                                    <li>评价方式：须写明采用的评价方式，并注明占比</li>
+                                    <li>评委组成：写明评委组成及占比</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">发布<br>招聘公告</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>人力资源部通过OA系统及iHR系统发布招聘公告</li>
+                                    <li>员工通过iHR系统进行报名</li>
+                                    <li>各各单位负责人需及时审批报名流程</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">资格<br>审核</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>需求部门安排一名党员进行资格审核</li>
+                                    <li>资格审核后，需求部门需沟通评委，并确定面试时间反馈人力部</li>
+                                    <li>资格审核不公示，资格审核结果作为招聘文件附件发文</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">招聘</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>人力资源部发布招聘文件，包含资格审核结果，面试/笔试时间，成绩占比等</li>
+                                    <li>需求单位提前沟通面试官按时参加面试</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">成绩<br>汇总</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>需求部门安排一名党员和人力资源部工作人员进行成绩统计</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">拟聘<br>推荐</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>需求部门结合岗位要求、，面试情况（如：推荐率、评语等）和招聘成绩情况，确定拟聘人员</li>
+                                    <li>招聘成绩达75分方具备推荐资格；仅有1人报名职位需达80分方具备推荐资格</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">拟聘<br>公示</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>人力资源部依据需求部门推荐意见，审核后发布拟聘公告</li>
+                                    <li>公示时间不低于三个工作日</li>
+                                    <li>涉及单位均需放置公示意见箱</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">人员<br>聘用</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>公示期结束后，收集纪委办公室反馈公示期间的意见情况</li>
+                                    <li>无问题反馈则发布聘任文件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 下载按钮区域 -->
+            <div class="download-section">
+                <h3 class="download-title">工具模板下载区</h3>
+                <div class="download-buttons">
+                    <a href="职位竞聘部分/1.招聘请示模版.docx" class="download-btn" download>
+                        <span class="download-btn-text">招聘请示模版</span>
+                    </a>
+                    <a href="职位竞聘部分/2.职位招聘公告模板.doc" class="download-btn" download>
+                        <span class="download-btn-text">职位招聘公告模板</span>
+                    </a>
+                    <a href="职位竞聘部分/3.资格审核结果.xls" class="download-btn" download>
+                        <span class="download-btn-text">资格审核结果</span>
+                    </a>
+                    <a href="职位竞聘部分/4.面试考评表.docx" class="download-btn" download>
+                        <span class="download-btn-text">面试考评表</span>
+                    </a>
+                    <a href="职位竞聘部分/5.招聘成绩汇总.xlsx" class="download-btn" download>
+                        <span class="download-btn-text">招聘成绩汇总</span>
+                    </a>
+                    <a href="职位竞聘部分/6.关于xxxx职位拟聘人员的公示.doc" class="download-btn" download>
+                        <span class="download-btn-text">职位拟聘人员公示</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../breadcrumb.js"></script>
+    <script src="Zwgl.js"></script>
+</body>
+</html>

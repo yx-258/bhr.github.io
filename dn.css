@@ -1,0 +1,163 @@
+/* 下载按钮样式文件 - dn.css */
+
+/*======================================
+=            配色与变量定义             =
+======================================*/
+:root {
+    /* 通用 */
+    --transition-fast: .3s;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --light-gray: #f8f8f8;
+    --dark-gray: #333333;
+}
+
+
+/*======================================
+=              固定右上角下载按钮        =
+======================================*/
+/* 基础下载按钮（静态） */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 10px 16px;
+
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1976d2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+
+    border: 2px solid #2196f3;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-fast) ease;
+    box-shadow: 0 4px 20px rgba(33, 150, 243, 0.2);
+    backdrop-filter: blur(10px);
+    will-change: transform, box-shadow;
+}
+
+/* 固定右上角按钮 - 额外类 */
+.download-btn-fixed {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* 键盘可访问性：焦点态 */
+.download-btn:focus-visible {
+    outline: 2px solid var(--black-color);
+    outline-offset: 2px;
+}
+
+/* 悬停态 */
+.download-btn:hover {
+    background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+    color: #1565c0;
+    border-color: #1976d2;
+    box-shadow: 0 6px 25px rgba(33, 150, 243, 0.3);
+    transform: translateY(-1px);
+}
+
+/* 按压态 */
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/*======================================
+=            图标效果（伪元素）         =
+======================================*/
+/* 图标 */
+.download-btn::before {
+    content: "⬇";
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 16px;
+    color: #1976d2;
+    transition: transform var(--transition-fast) ease, color var(--transition-fast) ease;
+}
+
+/* 悬停时图标 */
+.download-btn:hover::before {
+    transform: translateY(2px);
+    color: #1565c0;
+}
+
+
+/*======================================
+=             按钮文本                  =
+======================================*/
+.download-btn-text {
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: #1976d2;
+}
+
+
+/*======================================
+=             响应式设计                =
+======================================*/
+@media (max-width: 768px) {
+    .download-btn {
+        top: 10px;
+        right: 10px;
+        min-width: 100px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 480px) {
+    .download-btn {
+        top: 5px;
+        right: 5px;
+        min-width: 80px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .download-btn .download-btn-text {
+        display: none;
+    }
+    
+    .download-btn::before {
+        margin-right: 0;
+        font-size: 14px;
+    }
+}
+
+
+/*======================================
+=             使用示例注释              =
+======================================*/
+/*
+固定右上角下载按钮使用示例：
+
+<a href="文件包/1.招聘请示模版.docx" class="download-btn" download>
+    <span class="download-btn-text">招聘请示模版</span>
+</a>
+
+<a href="文件包/1.数据盘点模版.xlsx" class="download-btn" download>
+    <span class="download-btn-text">数据盘点模版</span>
+</a>
+
+<a href="文件包/1.梳理台账模版.xls" class="download-btn" download>
+    <span class="download-btn-text">梳理台账模版</span>
+</a>
+
+说明：
+1. href：文件路径，根据页面位置调整路径
+2. class：download-btn 固定右上角样式
+3. download：强制下载；如需自定义文件名，可写 download="自定义名.扩展名"
+4. 路径说明：
+   - 根目录页面：href="文件包/文件名.扩展名"
+   - 子目录页面：href="../文件包/文件名.扩展名"
+5. 按钮始终固定在右上角，不会与其他内容冲突
+*/

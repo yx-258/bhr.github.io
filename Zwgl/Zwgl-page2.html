@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职位调整流程</title>
+    <link rel="stylesheet" href="../dn.css">
+    <link rel="stylesheet" href="../breadcrumb.css">
+    <link rel="stylesheet" href="Zwgl.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .process-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .process-section {
+            flex: 1;
+            min-width: 400px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2c5aa0;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90e2, #7bb3f0);
+            border-radius: 2px;
+        }
+
+        .process-flow {
+            position: relative;
+        }
+
+        .process-flow::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #4a90e2, #a8c8ec);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a90e2, #6ba3f0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-right: 30px;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            line-height: 1.2;
+        }
+
+        .step-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.4);
+        }
+
+        .step-content {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #4a90e2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .step-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .step-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .process-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-section {
+                min-width: auto;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .step-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 0.75rem;
+                margin-right: 20px;
+            }
+
+            .step-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>职位管理</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="Zwgl-page1.html" class="nav-link">职位竞聘</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Zwgl-page2.html" class="nav-link">职位调整</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Zwgl-page3.html" class="nav-link">试岗考评</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <div class="header">
+                <h1>职位调整流程</h1>
+            </div>
+            <div class="process-container">
+                <!-- 内部调整流程 -->
+                <div class="process-section">
+                    <h2 class="section-title">内部调整流程</h2>
+                    <div class="process-flow">
+                        <div class="process-step">
+                            <div class="step-icon">确定<br>职位<br>职数</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>梳理确定需要调整职位</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">内部<br>集体决策</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>员工谈话</li>
+                                    <li>上会集体决策</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">发起公司<br>呈批件</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>附会议纪要及谈话记录</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">审核<br>通过</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>公司审批通过</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-icon">发文<br>聘任</div>
+                            <div class="step-content">
+                                <ul>
+                                    <li>发布聘任文件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 下载按钮区域 -->
+            <div class="download-section">
+                <h3 class="download-title">工具模板下载区</h3>
+                <div class="download-buttons">
+                    <a href="职位调整/1.职位调整请示模板.doc" class="download-btn" download>
+                        <span class="download-btn-text">职位调整请示模板</span>
+                    </a>
+                    <a href="职位调整/2.关于xx职位调整的通知.docx" class="download-btn" download>
+                        <span class="download-btn-text">职位调整通知</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../breadcrumb.js"></script>
+    <script src="Zwgl.js"></script>
+</body>
+</html>

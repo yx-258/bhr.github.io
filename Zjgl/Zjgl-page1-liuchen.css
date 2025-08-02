@@ -1,0 +1,230 @@
+/* Zjgl-page1-liuchen.css */
+
+/* ============================================
+   流程图特定样式 - 基于图片内容
+   ============================================ */
+   .content-area {
+    padding: 20px 0; /* 调整内边距，因为main-content已有padding */
+}
+
+.flow-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 项目顶部对齐 */
+    gap: 30px; /* 主列之间的间距 */
+    position: relative;
+    padding: 20px;
+    min-height: 550px; /* 确保内容有足够的高度来布局 */
+}
+
+.standard-level, .broad-band-level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* 列内方框之间的间距 */
+    position: relative;
+}
+
+.section-title {
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px; /* 标题下方间距 */
+    min-width: 150px; /* 确保标题有一定宽度 */
+    text-align: center;
+}
+
+.section-title.green {
+    background-color: var(--flow-green); /* "标准化职级"的绿色 */
+}
+
+.section-title.blue {
+    background-color: var(--flow-blue); /* "大带宽职级"的蓝色 */
+}
+
+.level-box, .process-box {
+    border: 1px solid var(--flow-default-border);
+    padding: 15px 20px;
+    border-radius: var(--nav-link-border-radius); /* 使用导航链接圆角或自定义 */
+    text-align: center;
+    background-color: var(--flow-default-bg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    min-width: 140px; /* 增加最小宽度 */
+    position: relative;
+}
+
+.level-box .level-text {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.level-box .sub-text {
+    font-size: 0.9em;
+    color: var(--text-medium);
+    line-height: 1.3;
+}
+
+.level-box.standard-level-main {
+    border-color: var(--flow-green); /* 标准职级的绿色边框 */
+    background-color: var(--flow-light-green-bg); /* 浅绿色背景 */
+}
+
+.level-box.level-up, .level-box.level-down, .level-box.level-down-more {
+    border-color: var(--flow-default-border);
+    background-color: var(--flow-default-bg);
+}
+
+.level-box.broad-level-a, .level-box.broad-level-b {
+    border-color: var(--flow-blue); /* 大带宽职级的蓝色边框 */
+    background-color: var(--flow-light-blue-bg); /* 浅蓝色背景 */
+}
+
+.process-box {
+    background-color: var(--flow-light-orange-bg); /* 流程方框的浅橙色 */
+    border-color: var(--flow-orange); /* 橙色边框 */
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+.process-box.no-change {
+    background-color: var(--flow-light-pink-bg); /* "不变"方框的浅粉色 */
+    border-color: var(--flow-pink); /* 粉色边框 */
+}
+
+.arrow-text-right {
+    font-size: 0.9em;
+    color: var(--text-light);
+    text-align: left; /* 调整为左对齐以更好地模拟图片 */
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px; /* 增加一些左边距 */
+}
+
+/* 分隔线样式 */
+.divider {
+    border-left: 2px dashed var(--flow-divider-color);
+    height: 600px; /* 根据内容调整高度，可能需要动态计算 */
+    margin: 0 30px;
+    align-self: stretch; /* 让分隔线拉伸到父容器的高度 */
+}
+
+/* 中间流程方框的定位，使其与主流程对齐 */
+.middle-process-standard, .middle-process-broad {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* 垂直方向均匀分布空间 */
+    height: 100%; /* 占据父容器的全部高度以对齐 */
+    position: relative; /* 允许内部元素相对定位 */
+    flex-grow: 1; /* 允许这些列增长，以帮助对齐 */
+    padding-top: 60px; /* 调整顶部间距，以避免与标题重叠 */
+    padding-bottom: 40px; /* 调整底部间距 */
+}
+
+/* 精确对齐调整 (可能需要根据实际渲染效果微调) */
+.middle-process-standard .process-box:nth-child(1) {
+    margin-top: 10px; /* 调整以对齐“上延1级”流程 */
+}
+.middle-process-standard .process-box:nth-child(2) {
+    margin-top: 50px; /* 调整以对齐“标准级”流程 */
+}
+.middle-process-standard .process-box:nth-child(3) {
+    margin-top: 60px; /* 调整以对齐“下延2级”流程 */
+}
+
+.middle-process-broad .process-box:nth-child(1) {
+    margin-top: 10px; /* 调整以对齐“个人职级＞带宽上限”后的调整 */
+}
+.middle-process-broad .process-box:nth-child(2) {
+    margin-top: 50px; /* 调整以对齐“个人职级在带宽内” */
+}
+.middle-process-broad .process-box:nth-child(3) {
+    margin-top: 60px; /* 调整以对齐“个人职级＜带宽下限”后的调整 */
+}
+
+/* 基础箭头模拟 */
+.flow-chart-container .arrow-text-right::before {
+    content: '→';
+    margin-right: 5px;
+    color: var(--text-medium);
+}
+
+/* ============================================
+   响应式设计 - 平板和小屏幕适配 (流程图部分)
+   ============================================ */
+@media (max-width: 992px) {
+    /* 流程图区域适配 */
+    .flow-chart-container {
+        flex-direction: column; /* 垂直堆叠 */
+        gap: 40px; /* 增加垂直间距 */
+        padding: 0; /* 移除容器内边距 */
+        min-height: auto; /* 移除固定高度 */
+    }
+
+    .standard-level, .broad-band-level {
+        width: 100%; /* 占据全部宽度 */
+        align-items: flex-start; /* 左对齐 */
+        gap: 15px; /* 调整内部间距 */
+    }
+
+    .section-title {
+        width: 100%;
+        text-align: left;
+        min-width: unset; /* 移除最小宽度限制 */
+    }
+    
+    .level-box, .process-box {
+        width: 90%; /* 宽度调整 */
+        min-width: unset;
+    }
+
+    .arrow-text-right {
+        text-align: left; /* 继续左对齐 */
+        width: auto; /* 宽度自适应 */
+    }
+
+    .middle-process-standard, .middle-process-broad {
+        flex-direction: column; /* 保持垂直 */
+        height: auto; /* 高度自适应 */
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+        align-items: flex-start;
+        gap: 15px; /* 调整间距 */
+    }
+
+    .middle-process-standard .process-box,
+    .middle-process-broad .process-box {
+        margin-top: 0 !important; /* 移除手动上边距调整 */
+    }
+
+    .divider {
+        display: none; /* 在小屏幕上隐藏分隔线 */
+    }
+}
+
+/* ============================================
+   响应式设计 - 手机端适配 (流程图部分)
+   ============================================ */
+@media (max-width: 576px) {
+    /* 流程图特定手机端调整 */
+    .flow-chart-container {
+        padding: 0;
+    }
+    .level-box, .process-box {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .level-box .level-text {
+        font-size: 1em;
+    }
+    .level-box .sub-text {
+        font-size: 0.8em;
+    }
+    .arrow-text-right {
+        font-size: 0.85em;
+    }
+}

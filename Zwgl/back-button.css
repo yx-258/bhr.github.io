@@ -1,0 +1,47 @@
+/* 返回按钮样式 */
+.sidebar {
+    position: relative;
+}
+
+.back-button {
+    position: fixed;
+    top: 32px;
+    left: 300px; /* 280px sidebar + 20px 间距，避免遮挡 */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.18);
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.28);
+}
+
+.back-button:active {
+    transform: scale(0.95);
+}
+
+.back-button::before {
+    content: "←";
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .back-button {
+        left: 20px;
+        top: 20px;
+    }
+} 

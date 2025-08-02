@@ -1,0 +1,618 @@
+/* Zjgl-page2-liuchen.css - 严格按照图片和page1风格调整 */
+
+/* ============================================
+   标准化职级管理流程图样式 - 上半部分
+   ============================================ */
+   .standard-management-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 居中内容 */
+    padding: 20px;
+    position: relative;
+    overflow-x: auto; /* 允许在小屏幕上水平滚动 */
+    background-color: var(--background-white); /* 确保背景是白色 */
+    border-radius: var(--card-border-radius); /* 与卡片圆角一致 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* 添加阴影，与page1容器风格类似 */
+    min-width: 900px; /* 确保有足够宽度以避免元素堆叠 */
+}
+
+/* 条件总览条 */
+.section-title-bar {
+    background-color: var(--flow-orange); /* 橙色背景 */
+    color: white;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: var(--nav-link-border-radius); /* 统一圆角 */
+    margin-bottom: 30px;
+    align-self: flex-start; /* 左对齐 */
+    margin-left: 20px; /* 调整与左侧对齐 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* 添加阴影 */
+    font-size: 1.1em;
+}
+
+/* 顶/底部的晋升文本标签 */
+.promotion-label {
+    position: absolute; /* 相对于 .standard-management-flow 定位 */
+    font-weight: 600;
+    color: var(--highlight-color); /* 高亮颜色 */
+    font-size: 0.9em;
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.promotion-label.top-right {
+    top: 100px; /* 调整到图片所示位置 */
+    right: 20px;
+    padding-left: 15px; /* 留出箭头的空间 */
+}
+
+.promotion-label.top-right::before {
+    content: '↑';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* 箭头大小 */
+    color: var(--highlight-color);
+}
+
+.promotion-label.bottom-left {
+    position: relative; /* 独立于主网格流，但在其下方 */
+    margin-top: 20px; /* 与主网格的间距 */
+    align-self: flex-start; /* 左对齐 */
+    margin-left: 20px; /* 与左边距对齐 */
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+
+/* 主表格网格布局 */
+.main-table-grid {
+    display: grid;
+    grid-template-columns: 100px 180px repeat(4, 1fr); /* 调整列宽 */
+    gap: 0px; /* 边框在单元格内部实现 */
+    border: 1px solid var(--flow-default-border); /* 外边框 */
+    border-radius: var(--nav-link-border-radius);
+    overflow: hidden; /* 隐藏超出边界的内容，确保圆角 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* 统一阴影 */
+}
+
+/* 通用网格单元格样式 */
+.grid-header-cell,
+.grid-cell,
+.standard-grade-box,
+.level-box-individual {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-dark);
+    background-color: var(--flow-default-bg);
+    line-height: 1.5;
+    min-height: 70px; /* 确保高度一致 */
+    border-radius: var(--nav-link-border-radius); /* 统一圆角 */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* 单元格内小阴影 */
+    box-sizing: border-box; /* 确保padding和border包含在宽度内 */
+}
+
+/* 头部单元格样式 */
+.grid-header-cell {
+    font-weight: bold;
+    color: white;
+    border-color: var(--primary-color); /* 头部使用自身颜色作为边框 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 头部加更明显阴影 */
+    border-radius: var(--nav-link-border-radius); /* 统一圆角 */
+}
+
+.grid-header-cell.green-bg {
+    background-color: var(--flow-green);
+    border-color: var(--flow-green);
+}
+.grid-header-cell.orange-bg {
+    background-color: var(--flow-orange);
+    border-color: var(--flow-orange);
+}
+.grid-header-cell.blue-bg {
+    background-color: var(--flow-blue);
+    border-color: var(--flow-blue);
+}
+
+/* 左侧两列的容器布局 */
+.left-grade-column,
+.right-grade-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* 内部元素间距 */
+    padding: 8px; /* 内部间距 */
+    border-right: 1px solid var(--flow-default-border); /* 垂直分割线 */
+}
+
+.left-grade-column {
+    grid-row: 1 / span 5; /* 占据1到5行 */
+    padding-right: 0; /* 调整间距 */
+    border-right: none; /* 移除容器右侧边框，由内部元素或整体网格控制 */
+    display: grid;
+    grid-template-rows: auto 1fr; /* 头部和内容 */
+    justify-items: center;
+    align-items: center;
+}
+
+.right-grade-column {
+    grid-row: 1 / span 5; /* 占据1到5行 */
+    border-right: 1px solid var(--flow-default-border); /* 统一边框 */
+    padding-right: 0;
+    display: grid;
+    grid-template-rows: auto repeat(4, 1fr); /* 头部和四个级别 */
+    justify-items: center;
+    align-items: center;
+}
+
+
+.left-grade-column .grid-header-cell {
+    width: 100%; /* 填满父容器 */
+    border: none; /* 由父容器控制边框 */
+    border-radius: var(--nav-link-border-radius);
+    margin-bottom: 5px; /* 与下方标准职级框的间距 */
+}
+.right-grade-column .grid-header-cell {
+    width: 100%; /* 填满父容器 */
+    border: none; /* 由父容器控制边框 */
+    border-radius: var(--nav-link-border-radius);
+    margin-bottom: 5px; /* 与下方个人职级框的间距 */
+}
+
+
+/* 标准化职级下的“标准职级”框 */
+.standard-grade-box {
+    background-color: var(--flow-light-green-bg);
+    border: 1px dashed var(--flow-green);
+    font-weight: 500;
+    width: 80%; /* 宽度调整 */
+    height: 100%; /* 填充剩余高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: var(--nav-link-border-radius);
+}
+
+/* 个人职级下的四个级别框 */
+.level-box-individual {
+    background-color: var(--flow-light-green-bg);
+    border: 1px dashed var(--flow-green);
+    font-weight: 500;
+    width: 100%; /* 填满父容器 */
+    margin-bottom: 5px; /* 间距 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: var(--nav-link-border-radius);
+    height: 100%; /* 确保均分高度 */
+}
+.level-box-individual:last-child {
+    margin-bottom: 0; /* 最后一个无下边距 */
+}
+
+.level-box-individual.current-level-orange {
+    background-color: var(--flow-light-orange-bg);
+    border: 1px dashed var(--flow-orange);
+}
+
+
+/* 右侧条件列的容器 */
+.condition-columns {
+    grid-column: 3 / span 4; /* 占据第3列到第6列 */
+    grid-row: 1 / span 5; /* 占据所有行 */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    grid-template-rows: auto repeat(4, 1fr); /* 头部和4行内容 */
+    gap: 0; /* 内部单元格无间距 */
+}
+
+/* 右侧条件列的头部单元格 */
+.condition-columns .grid-header-cell {
+    border-right: 1px solid var(--flow-blue); /* 蓝色表头有右边框 */
+    border-bottom: 1px solid var(--flow-blue); /* 蓝色表头有下边框 */
+    background-color: var(--flow-blue);
+    border-radius: 0; /* 头部单元格无圆角，由 .main-table-grid 统一控制 */
+    box-shadow: none; /* 头部单元格不单独显示阴影 */
+}
+.condition-columns .grid-header-cell:last-child {
+    border-right: none; /* 最后一个无右边框 */
+}
+
+
+/* 内容单元格 */
+.content-box {
+    background-color: var(--flow-default-bg);
+    color: var(--text-medium);
+    font-size: 0.85em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 统一阴影 */
+    border-radius: var(--nav-link-border-radius); /* 统一圆角 */
+    border: 1px solid var(--flow-default-border);
+}
+
+/* 空白内容单元格（图片中有的空白方框） */
+.blank-content-box {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* 晋升流程框（常规晋升/快速晋升） */
+.process-box-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* 内部间距 */
+    background-color: transparent; /* 父容器无背景 */
+    border: none; /* 父容器无边框 */
+    box-shadow: none; /* 父容器无阴影 */
+    grid-column: span 4; /* 确保占据所有条件列的宽度 */
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* 内部控制padding */
+}
+
+.process-sub-box {
+    background-color: var(--flow-light-orange-bg);
+    border: 1px solid var(--flow-orange);
+    font-weight: bold;
+    color: var(--text-dark);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--nav-link-border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* 统一阴影 */
+    height: 100%; /* 确保高度填充 */
+}
+
+/* 个人职级与条件之间的描述文本和虚线 */
+.grade-condition-desc {
+    position: absolute;
+    font-size: 0.8em;
+    color: var(--flow-orange);
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 1; /* 确保在其他元素之上 */
+}
+
+.grade-condition-desc.upper-desc {
+    top: 240px; /* 精确调整位置，需要根据实际渲染微调 */
+    left: 280px; /* 精确调整位置 */
+}
+
+
+
+.grade-condition-desc.lower-desc {
+    bottom: 270px; /* 精确调整位置 */
+    left: 280px; /* 精确调整位置 */
+}
+
+
+
+/* 虚线连接（模拟图片中的虚线箭头） */
+/* 上方连接线 */
+.main-table-grid::before {
+    content: '';
+    position: absolute;
+    top: 175px; /* Y轴位置，需精确调整 */
+    left: 275px; /* X轴起始位置 */
+    width: 20px; /* 虚线长度 */
+    border-top: 1px dashed var(--flow-orange);
+    z-index: 0;
+}
+/* 下方连接线 */
+.main-table-grid::after {
+    content: '';
+    position: absolute;
+    bottom: 205px; /* Y轴位置，需精确调整 */
+    left: 275px; /* X轴起始位置 */
+    width: 20px; /* 虚线长度 */
+    border-top: 1px dashed var(--flow-orange);
+    z-index: 0;
+}
+
+
+/* ============================================
+   底部流程图样式 (保持与page1一致)
+   ============================================ */
+.bottom-flow-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 20px; /* 步骤和箭头之间的间距 */
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--secondary-bg-color); /* 使用通用次要背景色 */
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 统一阴影 */
+    width: 100%; /* 占据父容器宽度 */
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: var(--card-border-radius);
+    text-align: center;
+    min-width: 100px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 统一阴影 */
+}
+
+.blue-circle-box {
+    background-color: var(--primary-color); /* 使用主色调 */
+    color: white;
+}
+
+.light-blue-circle-box {
+    background-color: #e0f7fa; /* 浅蓝色，与主色调协调 */
+    color: var(--text-dark);
+    border: 1px solid #b2ebf2;
+}
+
+.flow-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.flow-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: inherit; /* 继承父元素的颜色 */
+}
+
+.flow-arrow-horizontal {
+    width: 40px;
+    height: 2px;
+    background-color: var(--text-medium);
+    position: relative;
+    margin: 0 10px; /* 箭头和方框之间的间距 */
+}
+
+.flow-arrow-horizontal::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--text-medium);
+    border-right: 2px solid var(--text-medium);
+}
+
+/* ============================================
+   响应式设计 - 平板和小屏幕适配 (page2特定)
+   ============================================ */
+@media (max-width: 992px) {
+    .standard-management-flow {
+        min-width: 700px; /* 确保在平板模式下仍然有一定宽度，可以滚动 */
+        padding: 15px;
+    }
+    .section-title-bar {
+        font-size: 1em;
+        margin-bottom: 20px;
+        margin-left: 15px;
+    }
+    .promotion-label.top-right {
+        top: 80px;
+        right: 15px;
+        font-size: 0.85em;
+    }
+    .promotion-label.bottom-left {
+        font-size: 0.85em;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    .main-table-grid {
+        grid-template-columns: 80px 150px repeat(4, 1fr); /* 调整列宽 */
+        font-size: 0.85em;
+    }
+    .grid-header-cell,
+    .grid-cell,
+    .standard-grade-box,
+    .level-box-individual {
+        padding: 8px;
+        font-size: 0.8em;
+        min-height: 60px;
+    }
+    .level-box-standard, .content-box, .process-sub-box {
+        font-size: 0.8em;
+    }
+    .arrow-text-right-orange {
+        font-size: 0.75em;
+    }
+    .bottom-flow-chart {
+        flex-direction: column; /* 垂直堆叠 */
+        gap: 15px;
+        margin-top: 30px;
+    }
+    .flow-step {
+        min-width: 150px;
+        width: 90%; /* 占据大部分宽度 */
+    }
+    .flow-arrow-horizontal {
+        width: 2px; /* 垂直箭头 */
+        height: 30px;
+        margin: 10px 0;
+    }
+    .flow-arrow-horizontal::after {
+        transform: translateY(-50%) rotate(135deg); /* 旋转箭头方向 */
+        top: auto;
+        bottom: 0;
+        right: auto;
+        left: 50%;
+        margin-left: -5px; /* 居中 */
+    }
+}
+
+/* ============================================
+   响应式设计 - 手机端适配 (page2特定)
+   ============================================ */
+@media (max-width: 576px) {
+    .standard-management-flow {
+        min-width: 500px; /* 手机端继续保持可滚动 */
+        padding: 10px;
+    }
+    .section-title-bar {
+        font-size: 0.9em;
+        margin-left: 10px;
+    }
+    .promotion-label.top-right {
+        top: 60px;
+        right: 10px;
+        font-size: 0.75em;
+    }
+    .promotion-label.bottom-left {
+        font-size: 0.75em;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .main-table-grid {
+        grid-template-columns: 60px 100px repeat(4, 1fr); /* 列宽进一步缩小 */
+        font-size: 0.75em;
+    }
+    .grid-header-cell,
+    .grid-cell,
+    .standard-grade-box,
+    .level-box-individual {
+        padding: 5px;
+        font-size: 0.7em;
+        min-height: 50px;
+    }
+    .level-box-standard, .content-box, .process-sub-box {
+        font-size: 0.7em;
+    }
+    .arrow-text-right-orange {
+        font-size: 0.65em;
+    }
+    .flow-title {
+        font-size: 0.9em;
+    }
+    .flow-items {
+        font-size: 0.7em;
+    }
+}
+
+/*======================================
+=           下载按钮样式              =
+======================================*/
+.download-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #fff;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.download-title {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+/* 下载按钮样式 */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1976d2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid #2196f3;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(33, 150, 243, 0.2);
+    backdrop-filter: blur(10px);
+    will-change: transform, box-shadow;
+}
+
+.download-btn::before {
+    content: "⬇";
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 16px;
+    color: #1976d2;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+    color: #1565c0;
+    border-color: #1976d2;
+    box-shadow: 0 6px 25px rgba(33, 150, 243, 0.3);
+    transform: translateY(-2px);
+}
+
+.download-btn:hover::before {
+    transform: translateY(2px);
+    color: #1565c0;
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn-text {
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: #1976d2;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .download-section {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .download-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .download-buttons {
+        gap: 0.8rem;
+    }
+    
+    .download-btn {
+        min-width: 160px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .download-btn {
+        min-width: 200px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>认证成绩</title>
+    <link rel="stylesheet" href="Rzgl.css">
+    <link rel="stylesheet" href="../page-transitions.css">
+    <link rel="stylesheet" href="../breadcrumb.css">
+    <link rel="stylesheet" href="Rzgl-page3.css">
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>认证管理</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="Rzgl-page1.html" class="nav-link">认证报名</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Rzgl-page2.html" class="nav-link">组织开始</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Rzgl-page3.html" class="nav-link current-page">认证成绩</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <div class="page-title">
+                <h1>认证成绩</h1>
+                <p>认证结果对比说明</p>
+            </div>
+            
+            <!-- 对比容器 -->
+            <div class="comparison-container">
+                <!-- 通过 -->
+                <div class="comparison-card">
+                    <div class="card-header">通过</div>
+                    <div class="card-content">
+                        <!-- 本职 -->
+                        <div class="content-section">
+                            <div class="section-title">本职</div>
+                            <div class="section-content">取得达标认证的资格</div>
+                        </div>
+                        
+                        <!-- 晋级 -->
+                        <div class="content-section">
+                            <div class="section-title">晋级</div>
+                            <div class="section-content">获得晋级申报资格的条件</div>
+                        </div>
+                        
+                        <!-- 区分认证等级 -->
+                        <div class="content-section">
+                            <div class="section-title highlight-red">区分认证等级</div>
+                            <div class="section-content">
+                                <ul class="content-list">
+                                    <li class="highlight-red">同一等级达标即可</li>
+                                    <li class="highlight-red">不同等级需通过晋级认证</li>
+                                </ul>
+                                <div class="section-title">例如：</div>
+                                <ul class="example-list">
+                                    <li class="highlight-red">3-4对应初级</li>
+                                    <li class="highlight-red">5-6对应中级</li>
+                                    <li class="highlight-red">3晋4，只需过达标认证</li>
+                                    <li class="highlight-red">4晋5必须过晋级认证</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- 跨职 -->
+                        <div class="content-section">
+                            <div class="section-title">跨职</div>
+                            <div class="section-content">拓宽职位发展通道</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 未通过 -->
+                <div class="comparison-card">
+                    <div class="card-header">未通过</div>
+                    <div class="card-content">
+                        <!-- 本职 -->
+                        <div class="content-section">
+                            <div class="section-title">本职</div>
+                            <div class="section-content">未取得达标认证的资格</div>
+                            <ul class="content-list">
+                                <li>每出现一次季度绩效为D或年度绩效为D的情形，个人职级下降一级</li>
+                                <li>连续两次未通过本职位任职资格认证，个人职级下降一级</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 晋级 -->
+                        <div class="content-section">
+                            <div class="section-title">晋级</div>
+                            <div class="section-content">失去晋级的条件之一</div>
+                        </div>
+                        
+                        <!-- 注意 -->
+                        <div class="content-section">
+                            <div class="section-title">注意</div>
+                            <div class="section-content">
+                                <span class="highlight-red">如同时报本职和晋级，可同时参加考试，本职不过，晋级无成绩</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 跨职 -->
+                        <div class="content-section">
+                            <div class="section-title">跨职</div>
+                            <div class="section-content">对本职不会有影响</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../page-transitions.js"></script>
+    <script src="../breadcrumb.js"></script>
+    <script src="Rzgl.js"></script>
+</body>
+</html> 
