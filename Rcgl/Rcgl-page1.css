@@ -491,7 +491,15 @@
 }
 
 .path-level.middle-level .expert-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
+}
+
+.path-level.middle-level .expert-card.skillful-hand-3 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.5rem);
 }
 
 .expert-card {
@@ -781,6 +789,12 @@
     .step-description {
         padding: 1rem;
         font-size: 0.85rem;
+    }
+
+    .path-level.middle-level .expert-card.skillful-hand-3 {
+        grid-column: auto;
+        justify-self: auto;
+        width: 100%;
     }
 }
 
